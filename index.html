@@ -1,903 +1,917 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cut Diesel Costs & Keep Your Hotel Running</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      background: #050505;
-      color: #f5f5f2;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: min(1120px, 90%);
-      margin: 0 auto;
-    }
-
-    .highlight {
-      color: #d8c94b;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
-      margin-bottom: 20px;
-      border: 1px solid rgba(216, 201, 75, 0.35);
-      border-radius: 999px;
-      background: rgba(216, 201, 75, 0.08);
-      color: #e8dc86;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    h1,
-    h2,
-    h3 {
-      line-height: 1.1;
-    }
-
-    h1 {
-      font-size: clamp(42px, 7vw, 78px);
-      letter-spacing: -0.045em;
-      max-width: 950px;
-    }
-
-    h2 {
-      font-size: clamp(34px, 5vw, 54px);
-      letter-spacing: -0.035em;
-      max-width: 800px;
-    }
-
-    h3 {
-      font-size: 21px;
-    }
-
-    p {
-      color: #c7c6bf;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 56px;
-      padding: 0 25px;
-      border-radius: 10px;
-      background: #d8c94b;
-      color: #050505;
-      font-weight: 800;
-      transition: 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      background: #eadc68;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: #fff;
-      border: 1px solid #625d42;
-    }
-
-    .btn-secondary:hover {
-      background: #181818;
-    }
-
-    header {
-      padding: 24px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      position: absolute;
-      width: 100%;
-      z-index: 10;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .logo {
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-    }
-
-    .logo span {
-      color: #d8c94b;
-    }
-
-    .nav-link {
-      font-size: 14px;
-      color: #d0cfc9;
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 150px 0 90px;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(216, 201, 75, 0.14), transparent 30%),
-        linear-gradient(180deg, #050505 0%, #0b0b0b 100%);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .hero-copy p {
-      max-width: 720px;
-      font-size: 20px;
-      margin: 28px 0;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-
-    .mini-proof {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      color: #deddd7;
-      font-size: 14px;
-    }
-
-    .mini-proof span::before {
-      content: "✓";
-      color: #d8c94b;
-      font-weight: bold;
-      margin-right: 8px;
-    }
-
-    .hero-card {
-      background: linear-gradient(160deg, #151515, #101010);
-      padding: 34px;
-      border-radius: 22px;
-      border: 1px solid rgba(216,201,75,0.18);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
-    }
-
-    .hero-card h3 {
-      margin-bottom: 18px;
-      font-size: 25px;
-    }
-
-    .hero-card ul {
-      list-style: none;
-    }
-
-    .hero-card li {
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      color: #dcdbd5;
-    }
-
-    .hero-card li::before {
-      content: "→";
-      color: #d8c94b;
-      margin-right: 10px;
-    }
-
-    section {
-      padding: 100px 0;
-    }
-
-    .section-heading {
-      margin-bottom: 55px;
-    }
-
-    .section-heading p {
-      margin-top: 18px;
-      max-width: 700px;
-      font-size: 18px;
-    }
-
-    .problem {
-      background: #f5f4ef;
-      color: #0b0b0b;
-    }
-
-    .problem p {
-      color: #66645c;
-    }
-
-    .problem-grid,
-    .benefits-grid,
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .problem-card,
-    .benefit-card,
-    .process-card {
-      padding: 30px;
-      border-radius: 16px;
-    }
-
-    .problem-card {
-      background: #fff;
-      border: 1px solid #dedbd0;
-    }
-
-    .problem-card .number {
-      font-size: 38px;
-      font-weight: 900;
-      color: #b8a63c;
-      margin-bottom: 18px;
-    }
-
-    .problem-card p,
-    .benefit-card p,
-    .process-card p {
-      margin-top: 12px;
-    }
-
-    .offer {
-      background: #050505;
-    }
-
-    .offer-box {
-      background: #141414;
-      border: 1px solid rgba(216,201,75,0.22);
-      border-radius: 24px;
-      padding: 60px;
-    }
-
-    .offer-box h2 {
-      max-width: 900px;
-    }
-
-    .offer-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin: 40px 0;
-    }
-
-    .offer-item {
-      padding: 22px;
-      background: rgba(255,255,255,0.04);
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .offer-item strong {
-      display: block;
-      margin-bottom: 6px;
-      color: #fff;
-    }
-
-    .offer-item span {
-      color: #c5c3ba;
-    }
-
-    .guarantee {
-      padding: 22px;
-      border-left: 4px solid #d8c94b;
-      background: rgba(216,201,75,0.06);
-      margin: 28px 0;
-      color: #dfddd4;
-    }
-
-    .benefits {
-      background: #0d0d0d;
-    }
-
-    .benefit-card {
-      background: #151515;
-      border: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .benefit-icon {
-      font-size: 32px;
-      margin-bottom: 16px;
-    }
-
-    .process {
-      background: #f5f4ef;
-      color: #050505;
-    }
-
-    .process p {
-      color: #66645c;
-    }
-
-    .process-card {
-      background: #fff;
-      border: 1px solid #e2dfd5;
-    }
-
-    .process-step {
-      width: 45px;
-      height: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: #f2edd2;
-      color: #796d28;
-      font-weight: 900;
-      margin-bottom: 18px;
-    }
-
-    .roi {
-      background: #050505;
-    }
-
-    .roi-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .roi-card {
-      background: #151515;
-      border-radius: 20px;
-      padding: 35px;
-      border: 1px solid rgba(216,201,75,0.18);
-    }
-
-    .roi-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 17px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .roi-row:last-child {
-      border-bottom: none;
-    }
-
-    .roi-row strong {
-      color: #fff;
-    }
-
-    .roi-row span {
-      color: #d8c94b;
-      font-weight: 800;
-    }
-
-    .cta-section {
-      background: #d8c94b;
-      color: #050505;
-      text-align: center;
-    }
-
-    .cta-section h2 {
-      margin: 0 auto;
-      max-width: 850px;
-    }
-
-    .cta-section p {
-      max-width: 680px;
-      margin: 20px auto 32px;
-      color: #4b4520;
-      font-size: 18px;
-    }
-
-    .cta-section .btn {
-      background: #050505;
-      color: #fff;
-    }
-
-    footer {
-      background: #000000;
-      padding: 30px 0;
-      text-align: center;
-      font-size: 13px;
-      color: #89877e;
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .roi-wrap {
-        grid-template-columns: 1fr;
-      }
-
-      .problem-grid,
-      .benefits-grid,
-      .process-grid,
-      .offer-list {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 130px;
-      }
-
-      .hero-card {
-        margin-top: 15px;
-      }
-
-      .offer-box {
-        padding: 35px 24px;
-      }
-
-      .nav-link {
-        display: none;
-      }
-    }
-
-    @media (max-width: 600px) {
-      section {
-        padding: 75px 0;
-      }
-
-      h1 {
-        font-size: 43px;
-      }
-
-      h2 {
-        font-size: 34px;
-      }
-
-      .hero-copy p {
-        font-size: 17px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cut Diesel Costs & Keep Your Hotel Running</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="todahslogo.png" type="image/png" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #050505;
+            color: #f5f5f2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: 0 auto;
+        }
+
+        .highlight {
+            color: #d8c94b;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 8px 14px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(216, 201, 75, 0.35);
+            border-radius: 999px;
+            background: rgba(216, 201, 75, 0.08);
+            color: #e8dc86;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.1;
+        }
+
+        h1 {
+            font-size: clamp(42px, 7vw, 78px);
+            letter-spacing: -0.045em;
+            max-width: 950px;
+        }
+
+        h2 {
+            font-size: clamp(34px, 5vw, 54px);
+            letter-spacing: -0.035em;
+            max-width: 800px;
+        }
+
+        h3 {
+            font-size: 21px;
+        }
+
+        p {
+            color: #c7c6bf;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 56px;
+            padding: 0 25px;
+            border-radius: 10px;
+            background: #d8c94b;
+            color: #050505;
+            font-weight: 800;
+            transition: 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            background: #eadc68;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #625d42;
+        }
+
+        .btn-secondary:hover {
+            background: #181818;
+        }
+
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+        }
+
+        .logo img {
+            height: 44px;
+            width: auto;
+            display: block;
+        }
+
+        .logo span {
+            color: #d8c94b;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            color: #d0cfc9;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 150px 0 90px;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(216, 201, 75, 0.14), transparent 30%),
+                linear-gradient(180deg, #050505 0%, #0b0b0b 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-copy p {
+            max-width: 720px;
+            font-size: 20px;
+            margin: 28px 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .mini-proof {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: #deddd7;
+            font-size: 14px;
+        }
+
+        .mini-proof span::before {
+            content: "✓";
+            color: #d8c94b;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .hero-card {
+            background: linear-gradient(160deg, #151515, #101010);
+            padding: 34px;
+            border-radius: 22px;
+            border: 1px solid rgba(216, 201, 75, 0.18);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-card h3 {
+            margin-bottom: 18px;
+            font-size: 25px;
+        }
+
+        .hero-card ul {
+            list-style: none;
+        }
+
+        .hero-card li {
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            color: #dcdbd5;
+        }
+
+        .hero-card li::before {
+            content: "→";
+            color: #d8c94b;
+            margin-right: 10px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 55px;
+        }
+
+        .section-heading p {
+            margin-top: 18px;
+            max-width: 700px;
+            font-size: 18px;
+        }
+
+        .problem {
+            background: #f5f4ef;
+            color: #0b0b0b;
+        }
+
+        .problem p {
+            color: #66645c;
+        }
+
+        .problem-grid,
+        .benefits-grid,
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .problem-card,
+        .benefit-card,
+        .process-card {
+            padding: 30px;
+            border-radius: 16px;
+        }
+
+        .problem-card {
+            background: #fff;
+            border: 1px solid #dedbd0;
+        }
+
+        .problem-card .number {
+            font-size: 38px;
+            font-weight: 900;
+            color: #b8a63c;
+            margin-bottom: 18px;
+        }
+
+        .problem-card p,
+        .benefit-card p,
+        .process-card p {
+            margin-top: 12px;
+        }
+
+        .offer {
+            background: #050505;
+        }
+
+        .offer-box {
+            background: #141414;
+            border: 1px solid rgba(216, 201, 75, 0.22);
+            border-radius: 24px;
+            padding: 60px;
+        }
+
+        .offer-box h2 {
+            max-width: 900px;
+        }
+
+        .offer-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 40px 0;
+        }
+
+        .offer-item {
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .offer-item strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #fff;
+        }
+
+        .offer-item span {
+            color: #c5c3ba;
+        }
+
+        .guarantee {
+            padding: 22px;
+            border-left: 4px solid #d8c94b;
+            background: rgba(216, 201, 75, 0.06);
+            margin: 28px 0;
+            color: #dfddd4;
+        }
+
+        .benefits {
+            background: #0d0d0d;
+        }
+
+        .benefit-card {
+            background: #151515;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .benefit-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .process {
+            background: #f5f4ef;
+            color: #050505;
+        }
+
+        .process p {
+            color: #66645c;
+        }
+
+        .process-card {
+            background: #fff;
+            border: 1px solid #e2dfd5;
+        }
+
+        .process-step {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #f2edd2;
+            color: #796d28;
+            font-weight: 900;
+            margin-bottom: 18px;
+        }
+
+        .roi {
+            background: #050505;
+        }
+
+        .roi-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .roi-card {
+            background: #151515;
+            border-radius: 20px;
+            padding: 35px;
+            border: 1px solid rgba(216, 201, 75, 0.18);
+        }
+
+        .roi-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 17px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .roi-row:last-child {
+            border-bottom: none;
+        }
+
+        .roi-row strong {
+            color: #fff;
+        }
+
+        .roi-row span {
+            color: #d8c94b;
+            font-weight: 800;
+        }
+
+        .cta-section {
+            background: #d8c94b;
+            color: #050505;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            margin: 0 auto;
+            max-width: 850px;
+        }
+
+        .cta-section p {
+            max-width: 680px;
+            margin: 20px auto 32px;
+            color: #4b4520;
+            font-size: 18px;
+        }
+
+        .cta-section .btn {
+            background: #050505;
+            color: #fff;
+        }
+
+        footer {
+            background: #000000;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #89877e;
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid,
+            .roi-wrap {
+                grid-template-columns: 1fr;
+            }
+
+            .problem-grid,
+            .benefits-grid,
+            .process-grid,
+            .offer-list {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            .hero-card {
+                margin-top: 15px;
+            }
+
+            .offer-box {
+                padding: 35px 24px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 75px 0;
+            }
+
+            h1 {
+                font-size: 43px;
+            }
+
+            h2 {
+                font-size: 34px;
+            }
+
+            .hero-copy p {
+                font-size: 17px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .logo img {
+                height: 36px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="container nav">
-      <div class="logo">Hotel<span>Solar</span></div>
-      <a href="#consultation" class="nav-link">Request Hotel Energy Assessment →</a>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-
-        <div class="hero-copy">
-          <span class="eyebrow">Solar Power Systems Built For Hotels</span>
-
-          <h1>
-            Stop Burning Your Hotel's Profit
-            <span class="highlight">On Diesel.</span>
-          </h1>
-
-          <p>
-            Keep the AC, the water heaters and the front desk running around the clock — whether or not the grid shows up.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#consultation" class="btn">
-              Get My Free Hotel Energy Assessment
-            </a>
-
-            <a href="#offer" class="btn btn-secondary">
-              See What's Included
-            </a>
-          </div>
-
-          <div class="mini-proof">
-            <span>Hotel-specific system design</span>
-            <span>Professional installation</span>
-            <span>After-installation support</span>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <h3>Your Hotel Solar System Includes:</h3>
-
-          <ul>
-            <li>Full hotel energy consumption assessment</li>
-            <li>Custom solar system sizing</li>
-            <li>Solar panels, inverter & battery configuration</li>
-            <li>Generator integration where required</li>
-            <li>Priority-load planning</li>
-            <li>Professional installation</li>
-            <li>System testing & commissioning</li>
-            <li>Staff handover & operating guidance</li>
-            <li>Post-installation support</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- PROBLEM -->
-    <section class="problem">
-      <div class="container">
-
-        <div class="section-heading">
-          <span class="eyebrow">The Real Problem</span>
-
-          <h2>
-            Your generator isn't just powering the hotel.
-            It's quietly eating your margins.
-          </h2>
-
-          <p>
-            Hotels need power almost constantly. Lighting, air conditioning,
-            refrigeration, pumps, TVs, Wi-Fi and guest facilities all depend on it.
-            That makes unstable grid power especially expensive.
-          </p>
-        </div>
-
-        <div class="problem-grid">
-
-          <div class="problem-card">
-            <div class="number">01</div>
-            <h3>Diesel Costs Keep Rising</h3>
-            <p>
-              Every hour your generator runs adds another expense to your
-              operating costs. That cost moves with the exchange rate, not with your room rate.
-            </p>
-          </div>
-
-          <div class="problem-card">
-            <div class="number">02</div>
-            <h3>Guests Expect Reliable Power</h3>
-            <p>
-              Customers don't care why the grid failed. They remember the
-              uncomfortable room, AC cutting out, Wi-Fi dropping, dark hallway or interrupted service.
-              The few seconds between grid failure and generator changeover end up in a bad review.
-            </p>
-          </div>
-
-          <div class="problem-card">
-            <div class="number">03</div>
-            <h3>Generators Create More Problems</h3>
-            <p>
-              Fuel logistics, maintenance, noise and fumes create costs beyond the price of diesel itself.
-              Every breakdown means an emergency repair at emergency prices.
-              Noise and fumes work against your listing because rooms near the generator house don't get booked as much.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- OFFER -->
-    <section class="offer" id="offer">
-      <div class="container">
-
-        <div class="offer-box">
-
-          <span class="eyebrow">The Hotel Solar Conversion Package</span>
-
-          <h2>
-            One complete system designed to
-            <span class="highlight">take your hotel from generator-dependent to grid-independent.</span>
-          </h2>
-
-          <div class="offer-list">
-
-            <div class="offer-item">
-              <strong>On-site Energy Audit</strong>
-              <span>
-                We assess your current power consumption, generator use,
-                critical equipment and operating patterns.
-              </span>
+    <header>
+        <div class="container nav">
+            <div class="logo">
+                <img src="todahslogo.png" alt="Todah's Solar Energy Logo" />
             </div>
+            <a href="#consultation" class="nav-link">Request Hotel Energy Assessment →</a>
+        </div>
+    </header>
 
-            <div class="offer-item">
-              <strong>Custom System Design</strong>
-              <span>
-                Your system is sized around your hotel—not copied from a
-                generic solar package.
-              </span>
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-grid">
+
+                <div class="hero-copy">
+                    <span class="eyebrow">Solar Power Systems Built For Hotels</span>
+
+                    <h1>
+                        Stop Burning Your Hotel's Profit
+                        <span class="highlight">On Diesel.</span>
+                    </h1>
+
+                    <p>
+                        Keep the AC, the water heaters and the front desk running around the clock — whether or not the grid shows up.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#consultation" class="btn">
+                            Get My Free Hotel Energy Assessment
+                        </a>
+
+                        <a href="#offer" class="btn btn-secondary">
+                            See What's Included
+                        </a>
+                    </div>
+
+                    <div class="mini-proof">
+                        <span>Hotel-specific system design</span>
+                        <span>Professional installation</span>
+                        <span>After-installation support</span>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <h3>Your Hotel Solar System Includes:</h3>
+
+                    <ul>
+                        <li>Full hotel energy consumption assessment</li>
+                        <li>Custom solar system sizing</li>
+                        <li>Solar panels, inverter & battery configuration</li>
+                        <li>Generator integration where required</li>
+                        <li>Priority-load planning</li>
+                        <li>Professional installation</li>
+                        <li>System testing & commissioning</li>
+                        <li>Staff handover & operating guidance</li>
+                        <li>Post-installation support</li>
+                    </ul>
+                </div>
+
             </div>
+        </section>
 
-            <div class="offer-item">
-              <strong>Priority Load Strategy</strong>
-              <span>
-                We identify which systems should remain powered first during
-                periods of heavy consumption. So guest-facing loads never feel a transition — no flicker, no reboot, no drop in Wi-Fi.
-              </span>
+
+        <!-- PROBLEM -->
+        <section class="problem">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">The Real Problem</span>
+
+                    <h2>
+                        Your generator isn't just powering the hotel.
+                        It's quietly eating your margins.
+                    </h2>
+
+                    <p>
+                        Hotels need power almost constantly. Lighting, air conditioning,
+                        refrigeration, pumps, TVs, Wi-Fi and guest facilities all depend on it.
+                        That makes unstable grid power especially expensive.
+                    </p>
+                </div>
+
+                <div class="problem-grid">
+
+                    <div class="problem-card">
+                        <div class="number">01</div>
+                        <h3>Diesel Costs Keep Rising</h3>
+                        <p>
+                            Every hour your generator runs adds another expense to your
+                            operating costs. That cost moves with the exchange rate, not with your room rate.
+                        </p>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="number">02</div>
+                        <h3>Guests Expect Reliable Power</h3>
+                        <p>
+                            Customers don't care why the grid failed. They remember the
+                            uncomfortable room, AC cutting out, Wi-Fi dropping, dark hallway or interrupted service.
+                            The few seconds between grid failure and generator changeover end up in a bad review.
+                        </p>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="number">03</div>
+                        <h3>Generators Create More Problems</h3>
+                        <p>
+                            Fuel logistics, maintenance, noise and fumes create costs beyond the price of diesel itself.
+                            Every breakdown means an emergency repair at emergency prices.
+                            Noise and fumes work against your listing because rooms near the generator house don't get booked as much.
+                        </p>
+                    </div>
+
+                </div>
             </div>
+        </section>
 
-            <div class="offer-item">
-              <strong>Professional Installation </strong>
-              <span>
-                Panels, batteries, inverters, protection equipment and wiring
-                are installed as one integrated system.
-                Phased install by wing or floor so occupied rooms keep running. No shutdown on your booking calendar.
-              </span>
+
+        <!-- OFFER -->
+        <section class="offer" id="offer">
+            <div class="container">
+
+                <div class="offer-box">
+
+                    <span class="eyebrow">The Hotel Solar Conversion Package</span>
+
+                    <h2>
+                        One complete system designed to
+                        <span class="highlight">take your hotel from generator-dependent to grid-independent.</span>
+                    </h2>
+
+                    <div class="offer-list">
+
+                        <div class="offer-item">
+                            <strong>On-site Energy Audit</strong>
+                            <span>
+                                We assess your current power consumption, generator use,
+                                critical equipment and operating patterns.
+                            </span>
+                        </div>
+
+                        <div class="offer-item">
+                            <strong>Custom System Design</strong>
+                            <span>
+                                Your system is sized around your hotel—not copied from a
+                                generic solar package.
+                            </span>
+                        </div>
+
+                        <div class="offer-item">
+                            <strong>Priority Load Strategy</strong>
+                            <span>
+                                We identify which systems should remain powered first during
+                                periods of heavy consumption. So guest-facing loads never feel a transition — no flicker, no reboot, no drop in Wi-Fi.
+                            </span>
+                        </div>
+
+                        <div class="offer-item">
+                            <strong>Professional Installation </strong>
+                            <span>
+                                Panels, batteries, inverters, protection equipment and wiring
+                                are installed as one integrated system.
+                                Phased install by wing or floor so occupied rooms keep running. No shutdown on your booking calendar.
+                            </span>
+                        </div>
+
+                        <div class="offer-item">
+                            <strong>Generator Integration</strong>
+                            <span>
+                                Where necessary, your generator remains available as backup
+                                instead of being your primary source of electricity.
+                            </span>
+                        </div>
+
+                        <div class="offer-item">
+                            <strong>Monitoring & Support</strong>
+                            <span>
+                                We help your team understand the system and provide support
+                                after commissioning.
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="guarantee">
+                        <strong>Designed Before You Commit:</strong>
+                        Your first step is an energy assessment so we can determine what
+                        system your hotel actually needs before recommending equipment.
+                    </div>
+
+                    <a href="#consultation" class="btn">
+                        Request My Hotel Assessment
+                    </a>
+
+                </div>
             </div>
+        </section>
 
-            <div class="offer-item">
-              <strong>Generator Integration</strong>
-              <span>
-                Where necessary, your generator remains available as backup
-                instead of being your primary source of electricity.
-              </span>
+
+        <!-- BENEFITS -->
+        <section class="benefits">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">The Outcome</span>
+
+                    <h2>
+                        You aren't buying solar panels.
+                        You're buying a hotel that's
+                        <span class="highlight">less dependent on diesel.</span>
+                    </h2>
+                </div>
+
+                <div class="benefits-grid">
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">↓</div>
+                        <h3>Lower Generator Dependence</h3>
+                        <p>
+                            Let solar and battery power carry more of your hotel's everyday
+                            electrical demand.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">₦</div>
+                        <h3>More Predictable Energy Costs</h3>
+                        <p>
+                            Reduce your exposure to fluctuating diesel prices and constant
+                            generator refuelling.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">24/7</div>
+                        <h3>More Reliable Guest Experience</h3>
+                        <p>
+                            Keep key hotel operations running even when public electricity
+                            is unavailable.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">◎</div>
+                        <h3>Quieter Operations</h3>
+                        <p>
+                            Reduce the amount of time noisy generators need to operate around
+                            guests and staff.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚙</div>
+                        <h3>Less Generator Wear</h3>
+                        <p>
+                            Fewer generator hours can mean less servicing, maintenance and
+                            equipment stress.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">↗</div>
+                        <h3>Protect Your Profit Margin</h3>
+                        <p>
+                            Every naira you stop unnecessarily burning on energy remains
+                            available to operate and grow the hotel.
+                        </p>
+                    </div>
+
+                </div>
             </div>
+        </section>
 
-            <div class="offer-item">
-              <strong>Monitoring & Support</strong>
-              <span>
-                We help your team understand the system and provide support
-                after commissioning.
-              </span>
+
+        <!-- PROCESS -->
+        <section class="process">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">Simple Process</span>
+
+                    <h2>
+                        From high energy bills to a properly designed solar system.
+                    </h2>
+
+                    <p>
+                        We handle the technical work so your management team doesn't have
+                        to become solar experts.
+                    </p>
+                </div>
+
+                <div class="process-grid">
+
+                    <div class="process-card">
+                        <div class="process-step">1</div>
+                        <h3>Assess</h3>
+                        <p>
+                            We review your hotel's energy use, generator dependence,
+                            appliances and priority loads.
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-step">2</div>
+                        <h3>Design</h3>
+                        <p>
+                            We recommend the solar, battery and inverter capacity required
+                            for your property.
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-step">3</div>
+                        <h3>Install</h3>
+                        <p>
+                            Our team installs, tests and commissions the complete system.
+                        </p>
+                    </div>
+
+                </div>
+
             </div>
+        </section>
 
-          </div>
 
-          <div class="guarantee">
-            <strong>Designed Before You Commit:</strong>
-            Your first step is an energy assessment so we can determine what
-            system your hotel actually needs before recommending equipment.
-          </div>
+        <!-- ROI -->
+        <section class="roi">
+            <div class="container roi-wrap">
 
-          <a href="#consultation" class="btn">
-            Request My Hotel Assessment
-          </a>
+                <div>
+                    <span class="eyebrow">Think Like A Hotel Owner</span>
 
+                    <h2>
+                        The question isn't:
+                        <span class="highlight">"How much does solar cost?"</span>
+                    </h2>
+
+                    <p style="margin-top: 22px; font-size: 18px;">
+                        The better question is:
+                        <strong style="color:#fff;">
+                            "How much will continuing to depend heavily on diesel cost this
+                            hotel over the next several years?"
+                        </strong>
+                    </p>
+
+                    <p style="margin-top: 18px;">
+                        A properly designed solar system converts part of an ongoing
+                        operating expense into infrastructure your hotel owns.
+                    </p>
+                </div>
+
+                <div class="roi-card">
+
+                    <div class="roi-row">
+                        <strong>Diesel consumption</strong>
+                        <span>↓ Reduced</span>
+                    </div>
+
+                    <div class="roi-row">
+                        <strong>Generator runtime</strong>
+                        <span>↓ Reduced</span>
+                    </div>
+
+                    <div class="roi-row">
+                        <strong>Fuel-price exposure</strong>
+                        <span>↓ Reduced</span>
+                    </div>
+
+                    <div class="roi-row">
+                        <strong>Power reliability</strong>
+                        <span>↑ Improved</span>
+                    </div>
+
+                    <div class="roi-row">
+                        <strong>Energy predictability</strong>
+                        <span>↑ Improved</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta-section" id="consultation">
+            <div class="container">
+
+                <h2>
+                    Find Out What It Would Take To Reduce Your Hotel's Dependence On Diesel.
+                </h2>
+
+                <p>
+                    Request a hotel energy assessment. We'll review your property,
+                    current power situation and recommend an appropriate solar setup.
+                </p>
+
+                <!-- Replace number below -->
+                <a href="https://wa.me/2349065209762?text=Hello%2C%20I%20would%20like%20a%20solar%20assessment%20for%20my%20hotel." class="btn">
+                    Request Assessment on WhatsApp
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <div class="container">
+            © 2026 SolarforHotels powered by Todah's Solar Energy
         </div>
-      </div>
-    </section>
-
-
-    <!-- BENEFITS -->
-    <section class="benefits">
-      <div class="container">
-
-        <div class="section-heading">
-          <span class="eyebrow">The Outcome</span>
-
-          <h2>
-            You aren't buying solar panels.
-            You're buying a hotel that's
-            <span class="highlight">less dependent on diesel.</span>
-          </h2>
-        </div>
-
-        <div class="benefits-grid">
-
-          <div class="benefit-card">
-            <div class="benefit-icon">↓</div>
-            <h3>Lower Generator Dependence</h3>
-            <p>
-              Let solar and battery power carry more of your hotel's everyday
-              electrical demand.
-            </p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">₦</div>
-            <h3>More Predictable Energy Costs</h3>
-            <p>
-              Reduce your exposure to fluctuating diesel prices and constant
-              generator refuelling.
-            </p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">24/7</div>
-            <h3>More Reliable Guest Experience</h3>
-            <p>
-              Keep key hotel operations running even when public electricity
-              is unavailable.
-            </p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">◎</div>
-            <h3>Quieter Operations</h3>
-            <p>
-              Reduce the amount of time noisy generators need to operate around
-              guests and staff.
-            </p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">⚙</div>
-            <h3>Less Generator Wear</h3>
-            <p>
-              Fewer generator hours can mean less servicing, maintenance and
-              equipment stress.
-            </p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">↗</div>
-            <h3>Protect Your Profit Margin</h3>
-            <p>
-              Every naira you stop unnecessarily burning on energy remains
-              available to operate and grow the hotel.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- PROCESS -->
-    <section class="process">
-      <div class="container">
-
-        <div class="section-heading">
-          <span class="eyebrow">Simple Process</span>
-
-          <h2>
-            From high energy bills to a properly designed solar system.
-          </h2>
-
-          <p>
-            We handle the technical work so your management team doesn't have
-            to become solar experts.
-          </p>
-        </div>
-
-        <div class="process-grid">
-
-          <div class="process-card">
-            <div class="process-step">1</div>
-            <h3>Assess</h3>
-            <p>
-              We review your hotel's energy use, generator dependence,
-              appliances and priority loads.
-            </p>
-          </div>
-
-          <div class="process-card">
-            <div class="process-step">2</div>
-            <h3>Design</h3>
-            <p>
-              We recommend the solar, battery and inverter capacity required
-              for your property.
-            </p>
-          </div>
-
-          <div class="process-card">
-            <div class="process-step">3</div>
-            <h3>Install</h3>
-            <p>
-              Our team installs, tests and commissions the complete system.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ROI -->
-    <section class="roi">
-      <div class="container roi-wrap">
-
-        <div>
-          <span class="eyebrow">Think Like A Hotel Owner</span>
-
-          <h2>
-            The question isn't:
-            <span class="highlight">"How much does solar cost?"</span>
-          </h2>
-
-          <p style="margin-top: 22px; font-size: 18px;">
-            The better question is:
-            <strong style="color:#fff;">
-              "How much will continuing to depend heavily on diesel cost this
-              hotel over the next several years?"
-            </strong>
-          </p>
-
-          <p style="margin-top: 18px;">
-            A properly designed solar system converts part of an ongoing
-            operating expense into infrastructure your hotel owns.
-          </p>
-        </div>
-
-        <div class="roi-card">
-
-          <div class="roi-row">
-            <strong>Diesel consumption</strong>
-            <span>↓ Reduced</span>
-          </div>
-
-          <div class="roi-row">
-            <strong>Generator runtime</strong>
-            <span>↓ Reduced</span>
-          </div>
-
-          <div class="roi-row">
-            <strong>Fuel-price exposure</strong>
-            <span>↓ Reduced</span>
-          </div>
-
-          <div class="roi-row">
-            <strong>Power reliability</strong>
-            <span>↑ Improved</span>
-          </div>
-
-          <div class="roi-row">
-            <strong>Energy predictability</strong>
-            <span>↑ Improved</span>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- CTA -->
-    <section class="cta-section" id="consultation">
-      <div class="container">
-
-        <h2>
-          Find Out What It Would Take To Reduce Your Hotel's Dependence On Diesel.
-        </h2>
-
-        <p>
-          Request a hotel energy assessment. We'll review your property,
-          current power situation and recommend an appropriate solar setup.
-        </p>
-
-        <!-- Replace number below -->
-        <a
-          href="https://wa.me/2349065209762?text=Hello%2C%20I%20would%20like%20a%20solar%20assessment%20for%20my%20hotel."
-          class="btn"
-        >
-          Request Assessment on WhatsApp
-        </a>
-
-      </div>
-    </section>
-
-  </main>
-
-
-  <footer>
-    <div class="container">
-      © 2026 SolarforHotels powered by Todah's Solar Energy
-    </div>
-  </footer>
+    </footer>
 
 </body>
 </html>
